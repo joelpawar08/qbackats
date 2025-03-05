@@ -152,4 +152,5 @@ async def ats_optimization_resume(
     }
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8089)
+     port = int(os.environ.get("PORT", 8089))  # Default to 8089 if PORT is not set
+     uvicorn.run(app, host="0.0.0.0", port=port)
